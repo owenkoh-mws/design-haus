@@ -158,9 +158,9 @@ export function PartnersSection() {
               지금 바로 무료 상담을 신청하고 
               맞춤형 마케팅 전략을 확인해보세요
             </p>
-            <button className="bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+            <a href="#contact" className="inline-block bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
               무료 상담 신청
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>

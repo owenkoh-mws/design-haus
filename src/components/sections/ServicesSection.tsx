@@ -111,11 +111,15 @@ export function ServicesSection() {
               현재 마케팅 현황을 분석하고 맞춤 전략을 제안해드립니다
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg">
-                무료 진단 신청
+              <Button size="lg" asChild>
+                <a href="#contact">
+                  무료 진단 신청
+                </a>
               </Button>
-              <Button variant="outline" size="lg">
-                성공 사례 보기
+              <Button variant="outline" size="lg" asChild>
+                <a href="#portfolio">
+                  성공 사례 보기
+                </a>
               </Button>
             </div>
           </div>

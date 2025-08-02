@@ -4,10 +4,10 @@ import { motion } from "framer-motion"
 import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" }
+  { icon: Facebook, href: "https://facebook.com/designagency", label: "Facebook" },
+  { icon: Twitter, href: "https://twitter.com/designagency", label: "Twitter" },
+  { icon: Instagram, href: "https://instagram.com/designagency", label: "Instagram" },
+  { icon: Linkedin, href: "https://linkedin.com/company/designagency", label: "LinkedIn" }
 ]
 
 const quickLinks = [
@@ -143,6 +143,8 @@ export function FooterSection() {
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg flex items-center justify-center transition-colors group"
                     aria-label={social.label}
                   >
@@ -242,13 +244,13 @@ export function FooterSection() {
                 © 2024 Digital Agency. All rights reserved.
               </p>
               <div className="flex space-x-6 text-sm">
-                <a href="#" className="text-white/60 hover:text-white transition-colors">
+                <a href="/privacy" className="text-white/60 hover:text-white transition-colors">
                   개인정보처리방침
                 </a>
-                <a href="#" className="text-white/60 hover:text-white transition-colors">
+                <a href="/terms" className="text-white/60 hover:text-white transition-colors">
                   이용약관
                 </a>
-                <a href="#" className="text-white/60 hover:text-white transition-colors">
+                <a href="/business-info" className="text-white/60 hover:text-white transition-colors">
                   사업자정보
                 </a>
               </div>

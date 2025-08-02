@@ -131,10 +131,10 @@ export function PortfolioSection() {
                     </div>
 
                     {/* CTA */}
-                    <button className="flex items-center justify-center gap-2 w-full bg-white/10 hover:bg-white/20 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors">
+                    <a href="/portfolio" className="flex items-center justify-center gap-2 w-full bg-white/10 hover:bg-white/20 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors">
                       자세히 보기
                       <ExternalLink className="w-4 h-4" />
-                    </button>
+                    </a>
                   </div>
                 </div>
               </MagicCard>
@@ -159,11 +159,15 @@ export function PortfolioSection() {
               포트폴리오 자료로 확인하실 수 있습니다
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg">
-                전체 포트폴리오 보기
+              <Button size="lg" asChild>
+                <a href="/portfolio">
+                  전체 포트폴리오 보기
+                </a>
               </Button>
-              <Button variant="outline" size="lg">
-                업종별 사례 문의
+              <Button variant="outline" size="lg" asChild>
+                <a href="#contact">
+                  업종별 사례 문의
+                </a>
               </Button>
             </div>
           </div>

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 스무스 스크롤링 */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Linear.app 스타일 Dark Theme */
 :root {
   /* Background Colors */

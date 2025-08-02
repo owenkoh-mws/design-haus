@@ -75,13 +75,17 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
         >
-          <Button size="lg" className="group">
-            무료 상담 시작하기
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <Button size="lg" className="group" asChild>
+            <a href="#contact">
+              무료 상담 시작하기
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
           </Button>
-          <Button variant="ghost" size="lg" className="group">
-            <Play className="mr-2 h-4 w-4" />
-            성공 사례 보기
+          <Button variant="ghost" size="lg" className="group" asChild>
+            <a href="#portfolio">
+              <Play className="mr-2 h-4 w-4" />
+              성공 사례 보기
+            </a>
           </Button>
         </motion.div>
 

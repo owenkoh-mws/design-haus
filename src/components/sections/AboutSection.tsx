@@ -1,130 +1,207 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { CheckCircle, Award, Users, TrendingUp } from "lucide-react"
+import { Rocket, Target, Users2, TrendingUp, Award, Lightbulb, HeartHandshake, Zap } from "lucide-react"
+import { NumberTicker } from "@/components/ui/number-ticker"
 
-const milestones = [
+const stats = [
   {
-    year: "2020",
-    title: "회사 설립",
-    description: "디지털 마케팅 전문 에이전시로 시작",
-    icon: Users
+    number: 500,
+    suffix: "+",
+    label: "성공한 프로젝트",
+    description: "다양한 업종의 클라이언트와 함께"
   },
   {
-    year: "2021",
-    title: "첫 100개 프로젝트 달성",
-    description: "다양한 업종의 클라이언트와 성공적인 협업",
-    icon: CheckCircle
+    number: 300,
+    suffix: "%",
+    label: "평균 ROI 증가",
+    description: "데이터 기반 전략의 결과"
   },
   {
-    year: "2022",
-    title: "업계 인정받은 성과",
-    description: "디지털 마케팅 어워드 수상",
-    icon: Award
+    number: 50,
+    suffix: "+",
+    label: "전문 파트너사",
+    description: "글로벌 네트워크 구축"
   },
   {
-    year: "2023",
-    title: "매출 1000% 증가",
-    description: "클라이언트 평균 ROI 300% 달성",
-    icon: TrendingUp
+    number: 98,
+    suffix: "%",
+    label: "고객 만족도",
+    description: "지속적인 파트너십 유지"
   }
 ]
 
-const values = [
+const journey = [
   {
-    title: "데이터 기반 의사결정",
-    description: "모든 전략과 실행은 정확한 데이터 분석을 바탕으로 합니다",
+    year: "2020",
+    title: "Digital Journey 시작",
+    description: "소수 정예 팀으로 디지털 마케팅 혁신 시작",
+    icon: Rocket,
+    color: "from-blue-500 to-purple-600"
   },
   {
-    title: "투명한 커뮤니케이션",
-    description: "프로젝트 진행 상황과 성과를 실시간으로 공유합니다",
+    year: "2021", 
+    title: "전략적 성장",
+    description: "AI 기반 마케팅 솔루션 도입 및 100+ 프로젝트 성공",
+    icon: Target,
+    color: "from-purple-500 to-pink-600"
   },
   {
-    title: "지속적인 최적화",
-    description: "시장 변화에 맞춰 전략을 지속적으로 개선해나갑니다",
+    year: "2022",
+    title: "업계 리더십",
+    description: "디지털 마케팅 어워드 수상 및 업계 인정",
+    icon: Award,
+    color: "from-pink-500 to-red-600"
   },
   {
-    title: "고객 성공에 집중",
-    description: "고객의 비즈니스 성장이 우리의 최우선 목표입니다",
+    year: "2023",
+    title: "글로벌 확장",
+    description: "해외 시장 진출 및 글로벌 파트너십 구축",
+    icon: TrendingUp,
+    color: "from-orange-500 to-yellow-600"
+  }
+]
+
+const expertise = [
+  {
+    icon: Lightbulb,
+    title: "혁신적 사고",
+    description: "창의적이고 혁신적인 마케팅 솔루션으로 시장을 선도합니다",
+    gradient: "from-yellow-400 to-orange-500"
+  },
+  {
+    icon: Target,
+    title: "정확한 타겟팅",
+    description: "데이터 분석을 통한 정밀한 고객 세분화와 맞춤형 전략을 제공합니다",
+    gradient: "from-blue-400 to-purple-500"
+  },
+  {
+    icon: Zap,
+    title: "빠른 실행력",
+    description: "신속한 의사결정과 실행으로 시장 기회를 놓치지 않습니다",
+    gradient: "from-purple-400 to-pink-500"
+  },
+  {
+    icon: HeartHandshake,
+    title: "진정한 파트너십",
+    description: "고객의 성공이 우리의 성공이라는 마음가짐으로 함께 성장합니다",
+    gradient: "from-green-400 to-blue-500"
   }
 ]
 
 export function AboutSection() {
   return (
-    <section className="py-24 bg-[var(--background-secondary)]">
-      <div className="container mx-auto px-4">
-        {/* Header */}
+    <section className="py-24 bg-[var(--background-secondary)] relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--accent-primary)]/5 to-transparent" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Hero Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            우리의 이야기
+          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+            <Users2 className="w-4 h-4 text-[var(--accent-primary)] mr-2" />
+            <span className="text-white/80 text-sm font-medium">우리의 이야기</span>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            데이터로 증명하는
+            <br />
+            <span className="bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] bg-clip-text text-transparent">
+              성장의 여정
+            </span>
           </h2>
-          <p className="text-lg text-white/70 max-w-3xl mx-auto">
-            2020년부터 시작된 우리의 여정은 단순한 마케팅 서비스를 넘어서, 
-            클라이언트의 진정한 비즈니스 파트너가 되는 것입니다.
+          <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
+            2020년 작은 팀으로 시작해 지금까지, 우리는 단순한 서비스 제공을 넘어서 
+            클라이언트의 진정한 디지털 파트너로 성장해왔습니다.
           </p>
         </motion.div>
 
-        {/* Timeline */}
+        {/* Stats Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center group"
+              >
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:border-[var(--accent-primary)]/50 hover:shadow-xl hover:shadow-[var(--accent-primary)]/20">
+                  <div className="text-4xl lg:text-5xl font-bold text-white mb-2 group-hover:text-[var(--accent-primary)] transition-colors">
+                    <NumberTicker value={stat.number} />
+                    <span className="text-[var(--accent-primary)]">{stat.suffix}</span>
+                  </div>
+                  <div className="text-white font-semibold mb-1">{stat.label}</div>
+                  <div className="text-white/60 text-sm">{stat.description}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Journey Timeline */}
         <div className="mb-24">
-          <motion.h3
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-2xl font-semibold text-white text-center mb-12"
+            className="text-center mb-16"
           >
-            주요 연혁
-          </motion.h3>
-          
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              성장의 발자취
+            </h3>
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+              매년 새로운 도전과 혁신을 통해 디지털 마케팅 업계를 선도해왔습니다
+            </p>
+          </motion.div>
+
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[var(--accent-primary)] to-[var(--accent-secondary)] opacity-30" />
+            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[var(--accent-primary)]/50 to-transparent transform -translate-y-1/2" />
             
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
+            <div className="grid lg:grid-cols-4 gap-8">
+              {journey.map((item, index) => (
                 <motion.div
-                  key={milestone.year}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  key={item.year}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
                   viewport={{ once: true }}
-                  className={`flex items-center ${
-                    index % 2 === 0 ? "justify-start" : "justify-end"
-                  }`}
+                  className="relative group"
                 >
-                  <div className={`w-full max-w-md ${
-                    index % 2 === 0 ? "text-right pr-8" : "text-left pl-8"
-                  }`}>
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 relative">
-                      {/* Timeline dot */}
-                      <div className={`absolute top-6 w-4 h-4 bg-[var(--accent-primary)] rounded-full ${
-                        index % 2 === 0 ? "-right-10" : "-left-10"
-                      }`} />
-                      
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0">
-                          <div className="w-12 h-12 bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] rounded-lg flex items-center justify-center">
-                            <milestone.icon className="w-6 h-6 text-white" />
-                          </div>
-                        </div>
-                        <div>
-                          <div className="text-[var(--accent-primary)] font-bold text-lg mb-1">
-                            {milestone.year}
-                          </div>
-                          <h4 className="text-white font-semibold text-lg mb-2">
-                            {milestone.title}
-                          </h4>
-                          <p className="text-white/70 text-sm">
-                            {milestone.description}
-                          </p>
-                        </div>
-                      </div>
+                  <div className="text-center">
+                    {/* Icon */}
+                    <div className={`w-20 h-20 bg-gradient-to-r ${item.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl`}>
+                      <item.icon className="w-10 h-10 text-white" />
+                    </div>
+                    
+                    {/* Year */}
+                    <div className="text-2xl font-bold text-[var(--accent-primary)] mb-3">
+                      {item.year}
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                      <h4 className="text-white font-semibold text-lg mb-3">
+                        {item.title}
+                      </h4>
+                      <p className="text-white/70 text-sm leading-relaxed">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 </motion.div>
@@ -133,33 +210,45 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* Values */}
+        {/* Expertise Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          className="mb-20"
         >
-          <h3 className="text-2xl font-semibold text-white text-center mb-12">
-            우리의 핵심 가치
-          </h3>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {values.map((value, index) => (
+          <div className="text-center mb-16">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              우리만의 경쟁력
+            </h3>
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+              차별화된 전문성과 혁신적 사고로 클라이언트의 성공을 이끌어냅니다
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {expertise.map((item, index) => (
               <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                key={item.title}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors"
+                className="group"
               >
-                <h4 className="text-white font-semibold text-lg mb-3">
-                  {value.title}
-                </h4>
-                <p className="text-white/70">
-                  {value.description}
-                </p>
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 h-full hover:bg-white/10 transition-all duration-300 hover:border-white/20">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${item.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <item.icon className="w-8 h-8 text-white" />
+                  </div>
+                  
+                  <h4 className="text-white font-bold text-xl mb-4">
+                    {item.title}
+                  </h4>
+                  <p className="text-white/70 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -167,22 +256,35 @@ export function AboutSection() {
 
         {/* CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center"
         >
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-semibold text-white mb-4">
-              함께 성장할 파트너를 찾고 있나요?
-            </h3>
-            <p className="text-white/70 mb-6">
-              우리의 경험과 전문성을 바탕으로 당신의 비즈니스를 성장시켜드리겠습니다
-            </p>
-            <button className="bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
-              파트너십 문의
-            </button>
+          <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-3xl p-12 max-w-4xl mx-auto relative overflow-hidden">
+            {/* Background Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent-primary)]/10 to-[var(--accent-secondary)]/10" />
+            
+            <div className="relative z-10">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                다음 성공 스토리의 주인공은
+                <br />
+                <span className="bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] bg-clip-text text-transparent">
+                  바로 당신입니다
+                </span>
+              </h3>
+              <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+                우리의 전문성과 혁신적 사고, 그리고 당신의 비전이 만나면 
+                놀라운 성과를 만들어낼 수 있습니다
+              </p>
+              <a 
+                href="#contact" 
+                className="inline-block bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:shadow-[var(--accent-primary)]/30 hover:scale-105 transition-all duration-300"
+              >
+                함께 시작하기
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>

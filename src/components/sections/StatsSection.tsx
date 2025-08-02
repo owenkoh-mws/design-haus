@@ -161,9 +161,9 @@ export function StatsSection() {
               무료 마케팅 진단을 통해 현재 상황을 분석하고, 
               맞춤 전략으로 매출 성장을 시작하세요
             </p>
-            <button className="bg-white text-[var(--accent-primary)] px-8 py-3 rounded-lg font-semibold hover:bg-white/90 transition-colors">
+            <a href="#contact" className="inline-block bg-white text-[var(--accent-primary)] px-8 py-3 rounded-lg font-semibold hover:bg-white/90 transition-colors">
               무료 진단 신청하기
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>
