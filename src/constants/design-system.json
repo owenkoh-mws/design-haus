@@ -1,0 +1,172 @@
+{
+  "theme": {
+    "name": "Linear Dark",
+    "description": "Modern dark theme inspired by Linear.app",
+    "colors": {
+      "background": {
+        "primary": "#08090a",
+        "secondary": "#0d0e10",
+        "tertiary": "#151617",
+        "elevated": "#1a1b1d"
+      },
+      "text": {
+        "primary": "#ffffff",
+        "secondary": "rgba(255, 255, 255, 0.7)",
+        "tertiary": "rgba(255, 255, 255, 0.5)",
+        "quaternary": "rgba(255, 255, 255, 0.3)",
+        "inverse": "#08090a"
+      },
+      "border": {
+        "primary": "rgba(255, 255, 255, 0.1)",
+        "secondary": "rgba(255, 255, 255, 0.06)",
+        "focus": "rgba(255, 255, 255, 0.2)"
+      },
+      "accent": {
+        "primary": "#5e6ad2",
+        "secondary": "#26a69a",
+        "success": "#00c853",
+        "warning": "#ffa726",
+        "error": "#f44336",
+        "info": "#29b6f6"
+      },
+      "gradient": {
+        "primary": "linear-gradient(135deg, #5e6ad2 0%, #26a69a 100%)",
+        "secondary": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        "hero": "linear-gradient(135deg, #5e6ad2 0%, #26a69a 50%, #00c853 100%)"
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "primary": "var(--font-geist-sans)",
+        "mono": "var(--font-geist-mono)"
+      },
+      "fontSize": {
+        "xs": ["0.75rem", "1rem"],
+        "sm": ["0.875rem", "1.25rem"],
+        "base": ["1rem", "1.5rem"],
+        "lg": ["1.125rem", "1.75rem"],
+        "xl": ["1.25rem", "1.75rem"],
+        "2xl": ["1.5rem", "2rem"],
+        "3xl": ["1.875rem", "2.25rem"],
+        "4xl": ["2.25rem", "2.5rem"],
+        "5xl": ["3rem", "1"],
+        "6xl": ["3.75rem", "1"],
+        "7xl": ["4.5rem", "1"],
+        "8xl": ["6rem", "1"],
+        "9xl": ["8rem", "1"]
+      },
+      "fontWeight": {
+        "light": "300",
+        "normal": "400",
+        "medium": "500",
+        "semibold": "600",
+        "bold": "700"
+      },
+      "letterSpacing": {
+        "tight": "-0.025em",
+        "normal": "0em",
+        "wide": "0.025em"
+      }
+    },
+    "spacing": {
+      "0": "0px",
+      "1": "0.25rem",
+      "2": "0.5rem",
+      "3": "0.75rem",
+      "4": "1rem",
+      "5": "1.25rem",
+      "6": "1.5rem",
+      "8": "2rem",
+      "10": "2.5rem",
+      "12": "3rem",
+      "16": "4rem",
+      "20": "5rem",
+      "24": "6rem",
+      "32": "8rem",
+      "40": "10rem",
+      "48": "12rem",
+      "56": "14rem",
+      "64": "16rem"
+    },
+    "borderRadius": {
+      "none": "0",
+      "sm": "0.125rem",
+      "base": "0.25rem",
+      "md": "0.375rem",
+      "lg": "0.5rem",
+      "xl": "0.75rem",
+      "2xl": "1rem",
+      "3xl": "1.5rem",
+      "full": "9999px"
+    },
+    "shadows": {
+      "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      "base": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+      "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+      "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+      "glow": "0 0 20px rgba(94, 106, 210, 0.3)"
+    },
+    "animation": {
+      "duration": {
+        "fast": "150ms",
+        "base": "250ms",
+        "slow": "350ms"
+      },
+      "easing": {
+        "linear": "linear",
+        "in": "cubic-bezier(0.4, 0, 1, 1)",
+        "out": "cubic-bezier(0, 0, 0.2, 1)",
+        "inOut": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+    }
+  },
+  "components": {
+    "button": {
+      "base": "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 disabled:pointer-events-none disabled:opacity-50",
+      "variants": {
+        "primary": "bg-accent-primary text-white hover:bg-accent-primary/90",
+        "secondary": "bg-background-tertiary text-text-primary hover:bg-background-elevated border border-border-primary",
+        "ghost": "text-text-secondary hover:bg-background-tertiary hover:text-text-primary",
+        "outline": "border border-border-primary bg-transparent hover:bg-background-tertiary"
+      },
+      "sizes": {
+        "sm": "h-9 px-3 text-xs",
+        "md": "h-10 px-4 py-2",
+        "lg": "h-11 px-8",
+        "xl": "h-12 px-10"
+      }
+    },
+    "card": {
+      "base": "rounded-lg border border-border-primary bg-background-secondary/50 backdrop-blur-sm text-text-primary shadow-sm",
+      "variants": {
+        "default": "",
+        "elevated": "bg-background-elevated shadow-md",
+        "glass": "bg-background-secondary/30 backdrop-blur-md border-border-secondary"
+      }
+    },
+    "input": {
+      "base": "flex h-10 w-full rounded-md border border-border-primary bg-background-tertiary px-3 py-2 text-sm text-text-primary placeholder:text-text-quaternary focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-border-focus disabled:cursor-not-allowed disabled:opacity-50"
+    }
+  },
+  "layout": {
+    "container": {
+      "center": true,
+      "padding": "2rem",
+      "screens": {
+        "sm": "640px",
+        "md": "768px",
+        "lg": "1024px",
+        "xl": "1280px",
+        "2xl": "1400px"
+      }
+    },
+    "section": {
+      "padding": {
+        "y": "5rem",
+        "x": "1rem"
+      }
+    }
+  }
+}
